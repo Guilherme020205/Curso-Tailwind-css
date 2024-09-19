@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'uber': "url('./src/assets/bguber.png')",
-        'city': "url('./src/assets/bg-city.png')",
+        'uber': "url('../src/assets/bguber.png')",
+        'city': "url('../src/assets/bg-city.png')",
       }
     },
   },
