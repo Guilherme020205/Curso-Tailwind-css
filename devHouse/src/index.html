@@ -20,60 +20,96 @@
     <div class="flex w-full">
         <!-- Sidebas -->
 
-        <aside class="hidden sm:flex w-full max-w-[200px] min-h-screen relative bg-white flex-col px-2 py-5">
-           
+        <aside class="border-r-2 hidden sm:flex w-full max-w-[200px] min-h-screen relative bg-white flex-col px-2 py-5">
+
             <div class="fixed">
                 <div>
                     <h1 class="text-rose-500 text-3xl font-bold">DevHouse</h1>
                 </div>
 
                 <nav class="flex flex-col mt-8 w-full gap-4">
-                    <a href="#" 
-                    class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
                         Aluguel
                     </a>
-                    <a href="#" 
-                    class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
                         Compra
                     </a>
-                    <a href="#" 
-                    class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
                         Serviços
                     </a>
-                    <a href="#" 
-                    class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
                         Contatos
                     </a>
                 </nav>
 
             </div>
 
-            <button class="w-11 h-11 rounded-full bg-gray-100 fixed z-30 bottom-5 left-4 hover:bg-gray-300 duration-300">
+            <button
+                class="w-11 h-11 rounded-full bg-gray-100 fixed z-30 bottom-5 left-4 hover:bg-gray-300 duration-300">
                 <i class="fa fa-phone" style="font-size: 16px;"></i>
             </button>
 
         </aside>
 
         <!-- Fim Sidebas -->
-        
+
         <main class="w-full flex flex-col pb-4">
 
+
+            <!-- Menu mobile -->
+
+            <div id="menuMobile" class="absolute z-50 w-full hidden flex-col items-center px-3 py-2 bg-white shadow-xl">
+                <button id="btn-close" onclick="closeMenu()" class="text-3xl text-bold mt-4">X</button>
+                <nav class="flex flex-col mt-8 gap-5 w-full">
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                        Aluguel
+                    </a>
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                        Compra
+                    </a>
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                        Serviços
+                    </a>
+                    <a href="#"
+                        class="text-gray-500 font-medium hover:text-black hover:bg-gray-100 p-3 rounded-lg duration-300">
+                        Contatos
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Fim Menu mobile -->
+
             <!-- Header -->
-            
+
             <header class="bg-white w-full py-5 px-3 flex flex-row items-center justify-between">
                 <div class="flex items-center bg-slate-100 px-3 py-2 w-full max-w-xs lg:max-y-[50%] rounded-lg lg:mr-8">
                     <i class="fa fa-search text-gray-500" style="font-size: 16px;"></i>
-                    <input type="text" class="w-full bg-slate-100 px-2 outline-none text-sm" placeholder="Procurando algum apartamento?">
+                    <input type="text" class="w-full bg-slate-100 px-2 outline-none"
+                        placeholder="Procurando apartamento?">
                 </div>
 
                 <div class="flex gap-3 items-center">
-                    <a href="#" class="hidden md:flex w-8 h-8 p-5 bg-slate-100  justify-center items-center rounded-full">
+                    <a href="#"
+                        class="hidden md:flex w-8 h-8 p-5 bg-slate-100  justify-center items-center rounded-full">
                         <i class="fa fa-heart text-gray-500" style="font-size: 16px;"></i>
                     </a>
 
-                    <button class="bg-rose-500 hover:bg-rose-600 duration-300 text-white flex items-center justify-center gap-2 px-4 py-2 rounded font-medium">
+                    <button
+                        class="bg-rose-500 hover:bg-rose-600 duration-300 text-white flex items-center justify-center gap-2 px-4 py-2 rounded font-medium">
                         <span class="hidden md:flex">Sign In</span>
                         <i class="fa fa-user md:ml-1"></i>
+                    </button>
+
+                    <button id="btn-open" onclick="openMenu()"
+                        class="sm:hidden flex items-center justify-center px-4 py-2">
+                        <i class="fa fa-bars" style="font-size: 24px;"></i>
                     </button>
 
                 </div>
@@ -82,9 +118,197 @@
 
             <!-- Fim Header -->
 
+            <!-- Houses -->
+
+            <section class="w-full px-3 lg:px-6">
+                <div class="flex w-full items-baseline justify-between ">
+                    <h1 class="font-bold text-3xl mt-4 mb-6">Compre ou Alugue</h1>
+                    <span class="hidden md:block text-gray-600">100 casas encontradas</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Houses -->
+
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/1.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/2.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/3.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/4.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/5.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="bg-white p-3 rounded-lg min-h-[400px] relative flex flex-col hover:shadow-lg duration-300">
+                        <div>
+                            <div class="group overflow-hidden rounded-lg">
+                                <div class="absolute z-40 top-5 left-5">
+                                    <div class="flex bg-slate-50/70 group-hover:bg-white duration-300 self-start items-center justify-center gap-2 px-3 py-1 rounded-full">
+                                        <i class="fa fa-map" style="font-size: 12px;"></i>
+                                        <p class="font-medium text-sm">Campo Grande - MS</p>
+                                    </div>
+                                </div>
+
+                                <img src="assets/6.jpg" alt="casa_img" class="rounded-lg w-full h-64 object-cover group-hover:scale-110 duration-300">
+                            </div>
+
+                            <div class="w-full flex flex-col gap-1 my-2">
+                                <h2 class="text-lg font-bold">Apartamento grande</h2>
+                                <div>
+                                    <p class="text-gray-600 line-through text-sm">R$3.000/mês</p>
+                                    <p class="my-1 text-indigo-500 font-bold">R$2.200/mês</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="font-medium text-sm">100 mts -</span>
+                            <span class="font-medium text-sm">2 banheiros -</span>
+                            <span class="font-medium text-sm">3 quartos </span>
+                        </div>
+                    </a>
+                
+                    <!-- Fim Houses -->
+                </div>
+
+            </section>
+
+            <!-- Fim Houses -->
+
         </main>
 
     </div>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 
